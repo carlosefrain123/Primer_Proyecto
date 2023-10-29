@@ -22,6 +22,7 @@
             $data=$stament->fetch(PDO::FETCH_ASSOC);
             if($stament->rowCount()> 0){
                 if (password_verify($password, $data['password'])) {
+                    session_start();
                     $_SESSION['username']=$data['username'];
                     $_SESSION['email']=$data['email'];                    
                     //echo "Hola ".$_SESSION["username"];

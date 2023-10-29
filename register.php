@@ -9,9 +9,6 @@
       }
   }
 ?>
-
-
-
 <main class="form-signin w-50 m-auto">
   <form method="POST" action="registrar.php">
    
