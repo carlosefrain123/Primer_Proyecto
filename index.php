@@ -1,12 +1,13 @@
 <?php
-session_start();
+session_start(); 
 require "includes/header.php";
-
-if (isset($_SESSION['username'])) {
-  echo "Bienvenido " . $_SESSION['username'];
+require_once("C://xampp/htdocs/proyecta/usernameModel/usernameModel.php");
+$obj=new usernameModel();
+if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+    echo "Hello $username";
 } else {
-  header("Location: login.php");
+    echo "You are not logged in.";
 }
-
-require "includes/footer.php";
 ?>
+<?php require "includes/footer.php"; ?>

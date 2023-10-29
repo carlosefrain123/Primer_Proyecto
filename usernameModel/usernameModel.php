@@ -15,14 +15,17 @@
             $stament->bindParam(":password", $hashedPassword); // Insertar la contraseña hasheada
             return ($stament->execute())?$this->PDO->lastInsertId():false;
         }
-        public function ingresar($email, $password) {
+        public function ingresarUsuario($email, $password) {
             $stament=$this->PDO->prepare("SELECT * FROM usuarios WHERE email=:email");
             $stament->bindParam(":email", $email); 
             $stament->execute();
             $data=$stament->fetch(PDO::FETCH_ASSOC);
             if($stament->rowCount()> 0){
                 if (password_verify($password, $data['password'])) {
-                    echo "Hola Bienvenido Papu";
+                    $_SESSION['username']=$data['username'];
+                    $_SESSION['email']=$data['email'];                    
+                    //echo "Hola ".$_SESSION["username"];
+                    header("Location:index.php");
                 }else{
                     echo "Lo siento";
                 }

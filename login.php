@@ -1,9 +1,6 @@
 <?php
 session_start();
 require "includes/header.php"; 
-require_once("C:/xampp/htdocs/proyecta/config/db.php");
-
-
 if (isset($_POST['submit'])) {
   if (empty($_POST['email']) || empty($_POST['password'])) {
     echo "Algunos campos están vacíos";

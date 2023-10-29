@@ -1,9 +1,6 @@
 <?php 
   require "includes/header.php"; 
   require_once("C:/xampp/htdocs/proyecta/usernameController/usernameController.php");
-  if (isset($_SESSION['username'])) {
-    header("Location: index.php");
-  }
   if (isset($_POST['submit'])) {
       if($_POST['email']=""|| $_POST['username']=""||$_POST['password']=""){
         echo "Faltan datos";
