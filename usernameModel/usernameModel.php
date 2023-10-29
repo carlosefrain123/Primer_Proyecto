@@ -31,7 +31,6 @@
                     echo "Lo siento";
                 }
             }
-
         }
     }
 ?>
